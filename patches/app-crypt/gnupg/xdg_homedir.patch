@@ -1,0 +1,13 @@
+diff --git a/config.h.in b/config.h.in.a
+index 9c0561c..7c4817c 100644
+--- a/config.h.in
++++ b/config.h.in.a
+@@ -902,7 +902,7 @@
+ #elif defined(__VMS)
+ #define GNUPG_DEFAULT_HOMEDIR "/SYS$LOGIN/gnupg"
+ #else
+-#define GNUPG_DEFAULT_HOMEDIR "~/.gnupg"
++#define GNUPG_DEFAULT_HOMEDIR "~/.local/share/gnupg"
+ #endif
+ #define GNUPG_PRIVATE_KEYS_DIR  "private-keys-v1.d"
+ #define GNUPG_PUBLIC_KEYS_DIR   "public-keys.d"

@@ -1,0 +1,9 @@
+# glibc checks version of compiler and complains about clang version
+sys-libs/glibc gcc
+sys-devel/gcc gcc
+
+# LLVM miscompiles
+#app-emulation/wine-vanilla gcc
+#app-emulation/wine-staging gcc
+## Openjdk <17 miscompiles
+<dev-java/openjdk-17 gcc no-lto

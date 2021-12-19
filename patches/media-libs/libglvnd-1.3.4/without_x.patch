@@ -1,0 +1,21 @@
+diff --git a/include/EGL/eglplatform.h b/include/EGL/eglplatform.h
+index 99362a2..04ea803 100644
+--- a/include/EGL/eglplatform.h
++++ b/include/EGL/eglplatform.h
+@@ -103,16 +103,6 @@ typedef intptr_t EGLNativeDisplayType;
+ typedef intptr_t EGLNativePixmapType;
+ typedef intptr_t EGLNativeWindowType;
+ 
+-#elif defined(USE_X11)
+-
+-/* X11 (tentative)  */
+-#include <X11/Xlib.h>
+-#include <X11/Xutil.h>
+-
+-typedef Display *EGLNativeDisplayType;
+-typedef Pixmap   EGLNativePixmapType;
+-typedef Window   EGLNativeWindowType;
+-
+ #elif defined(__unix__)
+ 
+ typedef void             *EGLNativeDisplayType;

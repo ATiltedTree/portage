@@ -1,0 +1,2 @@
+media-plugins/gst-plugins-meta vaapi ffmpeg
+media-plugins/gst-plugins-vaapi -opengl

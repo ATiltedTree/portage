@@ -1,0 +1,22 @@
+diff --git a/compiler-rt/CMakeLists.txt b/compiler-rt/CMakeLists.txt
+index e12d1eb1cebf..444cdea6fa3c 100644
+--- a/compiler-rt/CMakeLists.txt
++++ b/compiler-rt/CMakeLists.txt
+@@ -198,7 +198,7 @@ macro(handle_default_cxx_lib var)
+       set(${var}_LIBNAME "libc++")
+       set(${var}_INTREE 1)
+     else()
+-      set(${var}_LIBNAME "libstdc++")
++      set(${var}_LIBNAME "libc++")
+       set(${var}_SYSTEM 1)
+     endif()
+   else()
+@@ -240,7 +240,7 @@ endif()
+ option(SANITIZER_USE_STATIC_CXX_ABI
+   "Use static libc++abi." ${DEFAULT_SANITIZER_USE_STATIC_CXX_ABI})
+ 
+-set(DEFAULT_COMPILER_RT_USE_BUILTINS_LIBRARY OFF)
++set(DEFAULT_COMPILER_RT_USE_BUILTINS_LIBRARY ON)
+ if (FUCHSIA)
+   set(DEFAULT_COMPILER_RT_USE_BUILTINS_LIBRARY ON)
+ endif()

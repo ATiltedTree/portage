@@ -1,0 +1,2 @@
+# LTO breaks this test
+export ax_cv_c_float_words_bigendian=no

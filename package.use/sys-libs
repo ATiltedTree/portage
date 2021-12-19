@@ -1,0 +1,4 @@
+sys-libs/zlib minizip static-libs
+sys-libs/libunwind static-libs
+sys-libs/libcxx static-libs
+sys-libs/libcxxabi static-libs

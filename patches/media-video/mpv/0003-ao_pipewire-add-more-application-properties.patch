@@ -1,0 +1,36 @@
+From c706187797181968d0585d44cf72eaacaa70f473 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Thomas=20Wei=C3=9Fschuh?= <thomas@t-8ch.de>
+Date: Tue, 8 Jun 2021 00:24:06 +0200
+Subject: [PATCH 03/11] ao_pipewire: add more application properties
+
+---
+ audio/out/ao_pipewire.c | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+
+diff --git a/audio/out/ao_pipewire.c b/audio/out/ao_pipewire.c
+index b0102bee8e..9f2a66ad84 100644
+--- a/audio/out/ao_pipewire.c
++++ b/audio/out/ao_pipewire.c
+@@ -8,6 +8,7 @@
+ #include "ao.h"
+ #include "audio/format.h"
+ #include "config.h"
++#include "generated/version.h"
+ #include "internal.h"
+ #include "osdep/timer.h"
+ 
+@@ -222,7 +223,10 @@ static int init(struct ao *ao)
+                         PW_KEY_MEDIA_TYPE, "Audio",
+                         PW_KEY_MEDIA_CATEGORY, "Playback",
+                         PW_KEY_MEDIA_ROLE, "Music",
+-                        PW_KEY_NODE_NAME, "mpv",
++                        PW_KEY_NODE_NAME, ao->client_name,
++                        PW_KEY_APP_NAME, ao->client_name,
++                        PW_KEY_APP_ID, ao->client_name,
++                        PW_KEY_APP_ICON_NAME, ao->client_name,
+                         PW_KEY_NODE_LATENCY, latency_str,
+                         NULL),
+                     &stream_events,
+-- 
+2.34.1
+

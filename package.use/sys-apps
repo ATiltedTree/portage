@@ -1,0 +1,3 @@
+sys-apps/systemd gnuefi dns-over-tls policykit fido2 pkcs11 tpm elfutils cryptsetup
+sys-apps/dbus user-session
+sys-apps/xdg-desktop-portal screencast

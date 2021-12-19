@@ -1,0 +1,28 @@
+From d0c08f99c43b7df4d31ea999284fa66104384ca2 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Thomas=20Wei=C3=9Fschuh?= <thomas@t-8ch.de>
+Date: Fri, 17 Dec 2021 19:28:23 +0100
+Subject: [PATCH 11/11] ao_pipewire: fix volume control with only on channel
+
+---
+ audio/out/ao_pipewire.c | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+diff --git a/audio/out/ao_pipewire.c b/audio/out/ao_pipewire.c
+index 16a3eebbfa..7139ebbd5b 100644
+--- a/audio/out/ao_pipewire.c
++++ b/audio/out/ao_pipewire.c
+@@ -162,7 +162,10 @@ static void on_control_info(void *userdata, uint32_t id,
+                 p->muted = control->values[0] >= 0.5;
+             break;
+         case SPA_PROP_channelVolumes:
+-            if (control->n_values == 2) {
++            if (control->n_values == 1) {
++                p->volume[0] = control->values[0];
++                p->volume[1] = control->values[0];
++            } else if (control->n_values == 2) {
+                 p->volume[0] = control->values[0];
+                 p->volume[1] = control->values[1];
+             }
+-- 
+2.34.1
+

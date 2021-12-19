@@ -1,0 +1,22 @@
+diff --git a/configure.ac b/configure.ac.a
+index 4d872a2..3532771 100644
+--- a/configure.ac
++++ b/configure.ac.a
+@@ -852,7 +852,7 @@ if test x$with_tesseract != xno; then
+     else
+ 
+       save_cxxflags="$CXXFLAGS"
+-      cxxflags_to_try="-std=c++17 -stdlib=libstdc++"
++      cxxflags_to_try="-std=c++17"
+       CXXFLAGS_TO_USE=""
+ 
+       AC_MSG_CHECKING([supported C++ compiler flags])
+@@ -985,7 +985,7 @@ if test x$with_tesseract != xno; then
+         OCR_DEVS="\$(DD)ocr.dev \$(DD)hocr.dev \$(DD)pdfocr8.dev \$(DD)pdfocr24.dev \$(DD)pdfocr32.dev"
+         LEPTONICAINCLUDE="include base/leptonica.mak"
+         TESSERACTINCLUDE="include base/tesseract.mak"
+-        TESSERACT_LIBS="-lstdc++"
++        TESSERACT_LIBS="-lc++"
+       else
+         OCR_DEVS_WARNING_LINE1="OCR devices disabled due to incompatible compiler: tesseract requires a C++17 compatible compiler"
+       fi

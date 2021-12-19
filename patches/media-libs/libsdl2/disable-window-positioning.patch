@@ -1,0 +1,49 @@
+diff --git a/src/video/wayland/SDL_waylandwindow.c b/src/video/wayland/SDL_waylandwindow.c
+index 025dd30ee..fcd6a01aa 100644
+--- a/src/video/wayland/SDL_waylandwindow.c
++++ b/src/video/wayland/SDL_waylandwindow.c
+@@ -518,25 +518,6 @@ update_scale_factor(SDL_WindowData *window)
+     }
+ }
+ 
+-/* While we can't get window position from the compositor, we do at least know
+- * what monitor we're on, so let's send move events that put the window at the
+- * center of the whatever display the wl_surface_listener events give us.
+- */
+-static void
+-Wayland_move_window(SDL_Window *window,
+-                    SDL_WaylandOutputData *driverdata)
+-{
+-    int i, numdisplays = SDL_GetNumVideoDisplays();
+-    for (i = 0; i < numdisplays; i += 1) {
+-        if (SDL_GetDisplay(i)->driverdata == driverdata) {
+-            SDL_SendWindowEvent(window, SDL_WINDOWEVENT_MOVED,
+-                                SDL_WINDOWPOS_CENTERED_DISPLAY(i),
+-                                SDL_WINDOWPOS_CENTERED_DISPLAY(i));
+-            break;
+-        }
+-    }
+-}
+-
+ static void
+ handle_surface_enter(void *data, struct wl_surface *surface,
+                      struct wl_output *output)
+@@ -552,8 +533,6 @@ handle_surface_enter(void *data, struct wl_surface *surface,
+                                   sizeof(SDL_WaylandOutputData*) * (window->num_outputs + 1));
+     window->outputs[window->num_outputs++] = driverdata;
+     update_scale_factor(window);
+-
+-    Wayland_move_window(window->sdlwindow, driverdata);
+ }
+ 
+ static void
+@@ -586,9 +565,6 @@ handle_surface_leave(void *data, struct wl_surface *surface,
+     if (window->num_outputs == 0) {
+         SDL_free(window->outputs);
+         window->outputs = NULL;
+-    } else if (send_move_event) {
+-        Wayland_move_window(window->sdlwindow,
+-                            window->outputs[window->num_outputs - 1]);
+     }
+ 
+     update_scale_factor(window);

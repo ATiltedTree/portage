@@ -1,0 +1,4 @@
+# NO X11
+x11-libs/libX11
+#x11-libs/libxcb
+x11-base/xcb-proto

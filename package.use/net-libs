@@ -1,0 +1,2 @@
+net-libs/gnutls pkcs11 tools
+net-libs/webkit-gtk -opengl

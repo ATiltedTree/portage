@@ -1,0 +1,20 @@
+diff --git a/src/util.rs b/src/util.rs
+index 6f71376..655dcae 100644
+--- a/src/util.rs
++++ b/src/util.rs
+@@ -98,8 +98,13 @@ pub fn launch_app(info: &AppInfo, term_command: Option<&str>) {
+             .expect("Failed to create AppInfo from commandline");
+         info.launch(&[], Some(&context)).expect("Error while launching terminal app");
+     } else {
+-        let future = info.launch_uris_async_future(&[], Some(&context));
+-        MainContext::default().block_on(future).expect("Error while launching app");
++        let command = info.commandline().unwrap_or_else(|| info.executable());
++
++        let commandline = format!("systemd-start '{}'", command.display());
++        let info = AppInfo::create_from_commandline(commandline, None, AppInfoCreateFlags::NONE)
++            .expect("Failed to create AppInfo from commandline");
++        info.launch(&[], Some(&context))
++            .expect("Error while launching app");
+     }
+ }
+ 

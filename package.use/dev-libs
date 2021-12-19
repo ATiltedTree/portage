@@ -1,0 +1,4 @@
+dev-libs/libpcre2 pcre32
+dev-libs/libdbusmenu gtk3
+dev-libs/libindicate gtk
+dev-libs/xmlsec nss

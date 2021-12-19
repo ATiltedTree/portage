@@ -1,0 +1,21 @@
+# Remove files that shall not be installed from this list.
+amdgpu/navi14_asd.bin
+amdgpu/navi14_ce.bin
+amdgpu/navi14_ce_wks.bin
+amdgpu/navi14_gpu_info.bin
+amdgpu/navi14_me.bin
+amdgpu/navi14_me_wks.bin
+amdgpu/navi14_mec.bin
+amdgpu/navi14_mec_wks.bin
+amdgpu/navi14_mec2.bin
+amdgpu/navi14_mec2_wks.bin
+amdgpu/navi14_pfp.bin
+amdgpu/navi14_pfp_wks.bin
+amdgpu/navi14_rlc.bin
+amdgpu/navi14_sdma.bin
+amdgpu/navi14_sdma1.bin
+amdgpu/navi14_smc.bin
+amdgpu/navi14_sos.bin
+amdgpu/navi14_vcn.bin
+amdgpu/navi14_ta.bin
+rtl_nic/rtl8168h-2.fw

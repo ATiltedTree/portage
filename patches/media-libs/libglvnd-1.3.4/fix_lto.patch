@@ -1,0 +1,44 @@
+From 97db5662c1ec35a9fc2d60f53315366f9ffc9b79 Mon Sep 17 00:00:00 2001
+From: Charlotte Delenk <darkkirb@darkkirb.de>
+Date: Sun, 19 Sep 2021 16:28:54 +0200
+Subject: [PATCH] Mark entrypointFunctions as used for clang+lto
+
+LLVM currently ignores inline assembly references to symbols during
+dead code and data elimination while linking with link-time optimizations
+enabled.
+
+This manifests in a very large amount of unresolved references to
+entrypointFunctions when building libglvnd using clang with LTO enabled.
+
+This issue fixes #220 by marking the entrypointFunctions array as used,
+using a compiler attribute.
+
+Signed-off-by: Charlotte Delenk <darkkirb@darkkirb.de>
+---
+ src/GLX/glvnd_genentry.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/src/GLX/glvnd_genentry.c b/src/GLX/glvnd_genentry.c
+index 57d0047..e0aa2c2 100644
+--- a/src/GLX/glvnd_genentry.c
++++ b/src/GLX/glvnd_genentry.c
+@@ -29,6 +29,7 @@
+ 
+ #include "glvnd_genentry.h"
+ #include "utils_misc.h"
++#include "compiler.h"
+ 
+ #include <string.h>
+ #include <stdint.h>
+@@ -45,7 +46,7 @@
+ #define GLX_STUBS_COUNT
+ #include "g_glx_dispatch_stub_list.h"
+ 
+-static GLVNDentrypointStub entrypointFunctions[GENERATED_ENTRYPOINT_MAX];
++USED static GLVNDentrypointStub entrypointFunctions[GENERATED_ENTRYPOINT_MAX];
+ static char *entrypointNames[GENERATED_ENTRYPOINT_MAX] = {};
+ static int entrypointCount = 0;
+ 
+-- 
+GitLab
+

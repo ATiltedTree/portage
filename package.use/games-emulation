@@ -1,0 +1,2 @@
+games-emulation/citra sdl -nls -qt5 -telemetry
+games-emulation/dolphin ffmpeg

@@ -1,0 +1,15 @@
+diff --git a/configure.ac b/configure.ac
+index c8d68f78..63ee2f6a 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -374,10 +374,6 @@ else
+     LDFLAGS_NOSTARTFILES="-XCClinker -nostartfiles"
+ fi
+ 
+-if test x$GCC = xyes -a x$intel_compiler != xyes -a x$qcc_compiler != xyes -a x$android != xyes; then
+-  LIBCRTS="-lgcc_s"
+-fi
+-
+ AC_MSG_CHECKING([for __builtin___clear_cache])
+ AC_LINK_IFELSE(
+   [AC_LANG_PROGRAM([[]], [[__builtin___clear_cache(0, 0)]])],

@@ -1,0 +1,12 @@
+diff --git a/poppler/ImageEmbeddingUtils.cc b/poppler/ImageEmbeddingUtils.cc
+index 5c50f12..71f95b5 100644
+--- a/poppler/ImageEmbeddingUtils.cc
++++ b/poppler/ImageEmbeddingUtils.cc
+@@ -12,6 +12,7 @@
+ #include <config.h>
+ 
+ #include <memory>
++#include <setjmp.h>
+ #ifdef ENABLE_LIBJPEG
+ extern "C" {
+ #    include <jpeglib.h>

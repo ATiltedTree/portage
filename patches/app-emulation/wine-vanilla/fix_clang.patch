@@ -1,0 +1,26 @@
+diff --git a/dlls/ntdll/unix/signal_x86_64.c b/dlls/ntdll/unix/signal_x86_64.c.a
+index a99cf2a..7447828 100644
+--- a/dlls/ntdll/unix/signal_x86_64.c
++++ b/dlls/ntdll/unix/signal_x86_64.c.a
+@@ -638,8 +638,6 @@ struct dwarf_fde
+     unsigned int cie_offset;
+ };
+ 
+-extern const struct dwarf_fde *_Unwind_Find_FDE (void *, struct dwarf_eh_bases *);
+-
+ static unsigned char dwarf_get_u1( const unsigned char **p )
+ {
+     return *(*p)++;
+@@ -1481,12 +1479,6 @@ static NTSTATUS libunwind_virtual_unwind( ULONG64 ip, ULONG64 *frame, CONTEXT *c
+  */
+ NTSTATUS CDECL unwind_builtin_dll( ULONG type, DISPATCHER_CONTEXT *dispatch, CONTEXT *context )
+ {
+-    struct dwarf_eh_bases bases;
+-    const struct dwarf_fde *fde = _Unwind_Find_FDE( (void *)(context->Rip - 1), &bases );
+-
+-    if (fde)
+-        return dwarf_virtual_unwind( context->Rip, &dispatch->EstablisherFrame, context, fde,
+-                                     &bases, &dispatch->LanguageHandler, &dispatch->HandlerData );
+ #ifdef HAVE_LIBUNWIND
+     return libunwind_virtual_unwind( context->Rip, &dispatch->EstablisherFrame, context,
+                                      &dispatch->LanguageHandler, &dispatch->HandlerData );

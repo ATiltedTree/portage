@@ -1,0 +1,8 @@
+app-emulation/wine-vanilla vkd3d -mingw sdl -abi_x86_32 -xcomposite
+app-emulation/wine-staging vkd3d -mingw sdl -abi_x86_32 -xcomposite
+app-emulation/faudio -abi_x86_32
+
+app-emulation/virt-manager gtk
+# disable pulseaudio, we have sdl
+app-emulation/qemu io-uring opengl spice ssh usb usbredir vde vhost-user-fs virgl virtfs zstd capstone gtk sdl
+app-emulation/lxc io-uring
