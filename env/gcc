@@ -1,6 +1,6 @@
 CC="gcc"
 CXX="g++"
-COMMON_FLAGS="-march=native -O2 -pipe -fno-plt -g -flto"
+COMMON_FLAGS="-march=native -O2 -pipe -fno-plt -g"
 CFLAGS="${COMMON_FLAGS}"
 CXXFLAGS="${COMMON_FLAGS}"
 AR="gcc-ar"

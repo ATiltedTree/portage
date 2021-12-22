@@ -20,7 +20,7 @@
 */* -alsa pulseaudio pipewire
 
 # Use lto when possible
-*/* lto
+#*/* lto
 
 # No bluetooth
 */* -bluetooth -networkmanager -modemmanager
@@ -35,7 +35,7 @@
 */* gstreamer
 
 # Use homed
-*/* homed
+#*/* homed
 
 # Use hardened
 */* hardened
