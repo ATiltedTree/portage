@@ -1,2 +1,1 @@
-media-plugins/gst-plugins-meta vaapi ffmpeg
-media-plugins/gst-plugins-vaapi -opengl
+media-plugins/gst-plugins-meta vaapi vpx x264 opus ogg vorbis http mp3

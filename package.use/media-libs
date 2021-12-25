@@ -21,3 +21,4 @@ media-libs/glfw wayland-only
 
 media-libs/mlt frei0r sdl qt5 xml ffmpeg rtaudio opencv opengl
 media-libs/opencv contribdnn contrib
+
