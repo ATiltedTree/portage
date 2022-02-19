@@ -1,2 +1,2 @@
-sys-devel/clang xml
 sys-devel/clang-runtime openmp
+sys-devel/llvm -binutils-plugin

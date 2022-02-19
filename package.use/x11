@@ -1,0 +1,8 @@
+media-libs/mesa X
+media-libs/libepoxy X
+media-libs/libglvnd X
+media-libs/vulkan-loader X
+media-libs/vulkan-layers X
+
+gui-wm/sway X
+gui-libs/wlroots X

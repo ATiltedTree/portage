@@ -1,0 +1,20 @@
+diff --git a/configure.ac b/configure.ac.a
+index 0e69096..ca8d10d 100644
+--- a/configure.ac
++++ b/configure.ac.a
+@@ -418,13 +418,13 @@ case "$enable_unwind" in
+       if test "$enable_static" = yes; then
+          AC_CHECK_LIB([lzma], [lzma_index_buffer_decode])
+       fi
+-      AC_CHECK_LIB([unwind], [backtrace], [], [enable_unwind=no])
++      AC_CHECK_LIB([unwind], [unw_backtrace], [], [enable_unwind=no])
+       AC_CHECK_HEADERS([libunwind.h], [], [enable_unwind=no])
+       ;;
+    no)
+       ;;
+    yes)
+-      AC_CHECK_LIB([unwind], [backtrace], [], [AC_MSG_ERROR([can not find required library libunwind])])
++      AC_CHECK_LIB([unwind], [unw_backtrace], [], [AC_MSG_ERROR([can not find required library libunwind])])
+       AC_CHECK_HEADERS([libunwind.h], [], [AC_MSG_ERROR([can not find require header file libunwind.h])])
+       ;;
+    *)

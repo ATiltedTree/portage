@@ -1,2 +1,0 @@
-# Fix undefined symbol
-LDFLAGS="${LDFLAGS} -lm"

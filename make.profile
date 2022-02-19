@@ -1,1 +1,1 @@
-../../var/db/repos/localrepo/profiles/custom
+../../var/db/repos/localrepo/profiles/custom_musl

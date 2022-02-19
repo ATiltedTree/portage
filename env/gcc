@@ -1,5 +1,6 @@
 CC="gcc"
 CXX="g++"
+AS="as"
 AR="gcc-ar"
 NM="gcc-nm"
 RANLIB="gcc-ranlib"

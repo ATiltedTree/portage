@@ -1,0 +1,9 @@
+app-emulation/winetricks
+
+# Split packages for pulseaudio
+media-libs/libpulse
+media-sound/pulseaudio
+media-sound/pulseaudio-daemon
+
+# ffmpeg 5.0
+media-video/ffmpeg

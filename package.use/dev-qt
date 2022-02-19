@@ -1,3 +1,2 @@
 dev-qt/qtcore icu
 dev-qt/qtgui eglfs egl
-dev-qt/qtmultimedia -pulseaudio

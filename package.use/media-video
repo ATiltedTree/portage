@@ -2,10 +2,8 @@ media-video/pipewire jack-sdk pipewire-alsa v4l
 media-video/wireplumber LUA_SINGLE_TARGET: lua5-4
 
 # Has pipewire, disable pulseaudio
-media-video/mpv -xv cplugins libmpv -pulseaudio
+# Has vulkan, disable egl
+media-video/mpv -xv cplugins libmpv -pulseaudio -egl cli
 media-video/obs-studio v4l truetype
 
-media-video/video2x VIDEO2X_BACKEND: waifu2x
-
-# Uses sdl for audio, disable pulseaudio
-media-video/ffmpeg x264 fontconfig fribidi lzma openssl -gnutls opus rav1e svg v4l truetype vorbis vpx webp x265 sdl libxml2 jpeg2k theora fdk mp3 -pulseaudio
+media-video/ffmpeg x264 fontconfig fribidi lzma openssl -gnutls opus rav1e v4l truetype vorbis vpx x265 libxml2 theora fdk mp3

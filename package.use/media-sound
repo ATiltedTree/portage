@@ -1,2 +1,2 @@
-media-sound/pulseaudio -*
+media-sound/pulseaudio -daemon -alsa-plugin
 media-sound/ncspot mpris notify clipboard

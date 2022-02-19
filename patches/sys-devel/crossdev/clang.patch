@@ -1,0 +1,24 @@
+commit 385e9c002e92ae747dae3b882d6f55a65d883c9d
+Author: Alexey Sokolov <sokolov@google.com>
+Date:   Sun Jan 15 01:02:31 2017 +0000
+
+    Fix compiler in cross packages
+
+diff --git a/crossdev b/crossdev
+index 877c68f..f4fdd3b 100755
+--- a/crossdev
++++ b/crossdev
+@@ -1004,6 +1004,13 @@ set_env() {
+ 		echo "${v}='${!v}'"
+ 	done >> "${output}"
+ 
++	# If make.conf contains something like "CC=clang", packages still should be compiled for the target cpu by the default target compiler
++	echo "CC=''" >> "${output}"
++	echo "CXX=''" >> "${output}"
++	echo "CPP=''" >> "${output}"
++	echo "AS=''" >> "${output}"
++	echo "LD=''" >> "${output}"
++
+ 	output=$(_set_portage_file ${pkg} package.env)
+ 	echo "cross-${CTARGET}/${pkg} cross-${CTARGET}/${pkg}.conf" >> ${output}
+ }

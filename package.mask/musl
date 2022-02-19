@@ -1,0 +1,4 @@
+# Missing patches
+sys-apps/systemd::gentoo
+
+sys-auth/polkit::gentoo

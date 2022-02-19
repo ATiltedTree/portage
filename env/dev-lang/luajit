@@ -1,0 +1,2 @@
+# unwind uses __register_frame_info, which is libgcc internal
+CFLAGS="${CFLAGS} -DLJ_NO_UNWIND=1"

@@ -1,24 +1,19 @@
-media-libs/mesa -classic zink vulkan-overlay
+media-libs/mesa zink vulkan-overlay
 
 media-libs/freetype harfbuzz
 media-libs/harfbuzz icu
 
+media-libs/gd fontconfig truetype
+
 media-libs/libpng apng
 media-libs/libvpx postproc
 
-# Supports gstreamer, disable pulseaudio, use gtk3
-media-libs/libcanberra -pulseaudio -udev -gtk
+media-libs/libcanberra -udev -gtk
 
-# Supports sdl, disable pulseaudio
-media-libs/openal sdl -pulseaudio
 # Supports pipewire, disable pulseaudio
-media-libs/libsdl2 gles2 -pulseaudio haptic
-
-media-libs/babl lcms introspection
-media-libs/gegl lcms introspection cairo
+media-libs/libsdl2 -pulseaudio haptic
 
 media-libs/glfw wayland-only
 
-media-libs/mlt frei0r sdl qt5 xml ffmpeg rtaudio opencv opengl
-media-libs/opencv contribdnn contrib
-
+media-libs/babl introspection lcms
+media-libs/gegl introspection cairo lcms

@@ -1,0 +1,13 @@
+diff --git a/src/boot/efi/meson.build b/src/boot/efi/meson.build
+index e10e51cf4e..0fb842a1f5 100644
+--- a/src/boot/efi/meson.build
++++ b/src/boot/efi/meson.build
+@@ -359,7 +358,7 @@ foreach tuple : [['systemd_boot.so', systemd_boot_efi_name, systemd_boot_objects
+                 tuple[0],
+                 input : tuple[2],
+                 output : tuple[0],
+-                command : [efi_cc, '-o', '@OUTPUT@', efi_ldflags, efi_cflags, tuple[2], '-lefi', '-lgnuefi', '-lgcc'],
++                command : [efi_cc, '-o', '@OUTPUT@', efi_ldflags, efi_cflags, tuple[2], '-lefi', '-lgnuefi'],
+                 install : tuple[3],
+                 install_dir : bootlibdir)
+ 

@@ -1,3 +1,2 @@
-sys-apps/systemd gnuefi dns-over-tls policykit elfutils
-sys-apps/dbus user-session
+sys-apps/systemd gnuefi dns-over-tls elfutils importd curl lzma
 sys-apps/xdg-desktop-portal screencast
